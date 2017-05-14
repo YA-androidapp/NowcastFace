@@ -3,12 +3,12 @@ package jp.gr.java_conf.ya.nowcastface; // Copyright (c) 2017 YA <ya.androidapp@
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
+// import android.graphics.BitmapFactory;
+// import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.LightingColorFilter;
-import android.graphics.Paint;
-import android.util.Log;
+// import android.graphics.LightingColorFilter;
+// import android.graphics.Paint;
+// import android.util.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -197,35 +197,35 @@ public class Nowcast {
         return ret;
     }
 
-    public static final Bitmap drawPrecipitationsIcon(int[] precipitations) {
-        final int pref_icon_dif = 5;
-
-        Bitmap sun = BitmapFactory.decodeResource(r, R.drawable.sun);
-        Bitmap umb = BitmapFactory.decodeResource(r, R.drawable.umb);
-
-        final Bitmap bitmap =
-                Bitmap.createBitmap(nowcastDataNum * pref_icon_dif + 16, nowcastDataNum * pref_icon_dif + 16, Bitmap.Config.ARGB_8888);
-        final Canvas canvas = new Canvas(bitmap);
-        canvas.drawColor(Color.TRANSPARENT);
-
-        for (int i = nowcastDataNum - 1; i >= 0; i--) {
-            final Paint paint = new Paint();
-            if (precipitations[i] > -1) {
-                final LightingColorFilter lightingColorFilter = new LightingColorFilter(Color.parseColor(precipitationToColorcode(precipitations[i])), 0);
-                paint.setFilterBitmap(true);
-                paint.setColorFilter(lightingColorFilter);
-                if(umb==null)
-                    umb = BitmapFactory.decodeResource(r, R.drawable.umb);
-                canvas.drawBitmap(umb, i * (pref_icon_dif), i * pref_icon_dif, paint);
-            } else {
-                if(sun==null)
-                    sun = BitmapFactory.decodeResource(r, R.drawable.sun);
-                canvas.drawBitmap(sun, i * (pref_icon_dif), i * pref_icon_dif, paint);
-            }
-        }
-
-        return bitmap;
-    }
+//    public static final Bitmap drawPrecipitationsIcon(int[] precipitations) {
+//        final int pref_icon_dif = 5;
+//
+//        Bitmap sun = BitmapFactory.decodeResource(r, R.drawable.sun);
+//        Bitmap umb = BitmapFactory.decodeResource(r, R.drawable.umb);
+//
+//        final Bitmap bitmap =
+//                Bitmap.createBitmap(nowcastDataNum * pref_icon_dif + 16, nowcastDataNum * pref_icon_dif + 16, Bitmap.Config.ARGB_8888);
+//        final Canvas canvas = new Canvas(bitmap);
+//        canvas.drawColor(Color.TRANSPARENT);
+//
+//        for (int i = nowcastDataNum - 1; i >= 0; i--) {
+//            final Paint paint = new Paint();
+//            if (precipitations[i] > -1) {
+//                final LightingColorFilter lightingColorFilter = new LightingColorFilter(Color.parseColor(precipitationToColorcode(precipitations[i])), 0);
+//                paint.setFilterBitmap(true);
+//                paint.setColorFilter(lightingColorFilter);
+//                if(umb==null)
+//                    umb = BitmapFactory.decodeResource(r, R.drawable.umb);
+//                canvas.drawBitmap(umb, i * (pref_icon_dif), i * pref_icon_dif, paint);
+//            } else {
+//                if(sun==null)
+//                    sun = BitmapFactory.decodeResource(r, R.drawable.sun);
+//                canvas.drawBitmap(sun, i * (pref_icon_dif), i * pref_icon_dif, paint);
+//            }
+//        }
+//
+//        return bitmap;
+//    }
 
     private static final int getMaxPrecipitation(final int[] colors) {
         int maxPrecipitation = -1;

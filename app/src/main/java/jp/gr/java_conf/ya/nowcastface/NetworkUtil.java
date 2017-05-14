@@ -3,7 +3,7 @@ package jp.gr.java_conf.ya.nowcastface; // Copyright (c) 2017 YA <ya.androidapp@
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.StrictMode;
-import android.util.Log;
+// import android.util.Log;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
